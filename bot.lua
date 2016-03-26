@@ -5,51 +5,45 @@ URL = require('socket.url')
 JSON = require('dkjson')
 HTTPS = require('ssl.https')
 ----config----
-local bot_api_key = " "--توکن بوت را درون " قرار دهید --
-local BASE_URL = "https://api.telegram.org/bot"..bot_api_key
+local bot_api_key = 211408445:AAGTzn_sgHb4vC3m9SFEZUy0vloqsIDRd-glocal"
+BASE_URL = "https://api.telegram.org/bot"..bot_api_key
 local BASE_FOLDER = ""
 local start = [[
-hi :)
+`سلام`👋
+✨*خوش آمدید*✨
+🌀`هایپرسازتیم HEXTOR`🌀
 
-/hyper [`test`]
-- `test`
+🔱برخی امکاناتی که میتوانید در این ربات از آن استفاده نمایید بدین شرح است
+➖➖➖➖➖
+`color`
+✅*نوشتن متن در کادر* `` 
+`دریافت به صورت متن رنگی`
+*bold*
+✅*نوشتن متن در داخل کادر* **
+*دریافت به صورت متن کلفت*
+_italic_
+✅نوشتن متن در داخل کادر ``
+_دریافت به صورت کج_
+➖➖➖➖➖
+☄تبدیل استیکر به عکس
+☄تبدیل عکس به استیکر
 
-/hyper [*test*]
-- *test*
+⭐️`این دو نوع عمل به صورت خودکار انجام میشوند`
+➖➖➖➖➖
+⚠️*توجه داشته باشید* :
 
-/hyper [_test_]
-- _test_
+🔹با ابزار بالا میتوانید به صورت *ترکیبی* در _متن خود_ استفاده کنید.
 
-/hyper [[text](url)](url)
-- [BeatBot](BeatBot.ir)
+🔹متن رنگی فقط در تلگرام نسخه pc قابل مشاهده و در گوشی به صورت متن نازک دیده خواهد شد.
+➖➖➖➖➖
+🆑*چنل تیم* :
+[HEXTOR](http://telegram.me/HEXTOR_CH)
 
-*EXAMPLE*
-
-/hyper [`Hi`]
-[*I'm a api bot* ]
-[_BeatBot Team created me_]
-[[BeatBot Channel](test)][(http://telegram.me/beatbot_team)]
-
-*RESULT*
-
-`Hi`
-*I'm a api bot* 
-_BeatBot Team created me_
-[BeatBot Channel](http://telegram.me/beatbot_team)
-
-*OTHER*
-
-*sticker to photo*
-`just send a sticker`
-
-*photo to sticker*
-`just send a photo`
-
-*webshot*
-`/webshot url`
-
-_TNX TO USE ME :)_
-]] 
+⚜*ادمین*⚜
+[ReZa](http://telegram.me/reza_IDeactive)
+➖➖➖➖➖
+💠`کاری از`
+🔥*HEXTOR™*🔥]] 
 
 -------
 
@@ -207,8 +201,7 @@ function bot_run()
 
 	bot = bot.result
 
-	local bot_info = "Username = @"..bot.username.."\nName = "..bot.first_name.."\nId = "..bot.id.." \nBeatBot hyper bot :)\ntnx to @imandaneshi & @Unfriendly\neditor: @amirho3inf \nchannel : @BeatBot_Team"
-
+	local bot_info = "Username = @"..bot.username.."\nName = "..bot.first_name.."\nId = "..bot.id.. "
 	print(bot_info)
 
 	last_update = last_update or 0
@@ -256,14 +249,13 @@ function msg_processor(msg)
   if msg.text then return end
   
  
- elseif msg.text:match("/hyper (.*)") then
- local matches = { string.match(msg.text, "/hyper (.*)") }
+ elseif msg.text:math("(.*)") then
+ local matches = { string.match(msg.text, "(.*)") }
  local text = ''..matches[1]..''
  sendMessage(msg.chat.id, text, true, false, true)
 
 elseif msg.text:match("^/[sS]tart") or msg.text:match("^/[Hh]elp") then
  sendMessage(msg.chat.id, start, true, false, true)
-  sendMessage(msg.chat.id, [[[ربات خودتونو بسازید :)](http://telegram.me/beatbot_team)]], true, false, true)
 return end
 
 end
