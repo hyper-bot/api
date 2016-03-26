@@ -15,13 +15,13 @@ local start = [[
 
 🔱برخی امکاناتی که میتوانید در این ربات از آن استفاده نمایید بدین شرح است
 ➖➖➖➖➖
-`color`
+/write`color`
 ✅*نوشتن متن در کادر* `` 
 `دریافت به صورت متن رنگی`
-*bold*
+/write *bold*
 ✅*نوشتن متن در داخل کادر* **
 *دریافت به صورت متن کلفت*
-_italic_
+/write _italic_
 ✅نوشتن متن در داخل کادر ``
 _دریافت به صورت کج_
 ➖➖➖➖➖
@@ -249,8 +249,8 @@ function msg_processor(msg)
   if msg.text then return end
   
  
- elseif msg.text:math("(.*)") then
- local matches = { string.match(msg.text, "(.*)") }
+ elseif msg.text:math("/write (.*)") then
+ local matches = { string.match(msg.text, "/write (.*)") }
  local text = ''..matches[1]..''
  sendMessage(msg.chat.id, text, true, false, true)
 
